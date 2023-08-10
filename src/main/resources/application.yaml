@@ -1,0 +1,35 @@
+server:
+  port: 8090
+
+connection:
+  host: localhost:5432
+  database: library_app
+  username: postgres
+  password: Trazyn
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  r2dbc:
+    url: r2dbc:pool:postgres://localhost:5432/library_app
+    username: postgres
+    password: Trazyn
+    pool:
+      enabled: true
+  flyway:
+    enabled: true
+    validate-on-migrate: true
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/library_app
+    username: postgres
+    password: Trazyn
+    driverClassName: org.postgresql.Driver
+
+jwt:
+  secret: eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY4ODgwMjc2OSwiaWF0IjoxNjg4ODAyNzY5fQ.NcQWhx2LNFSe_zg8Fpp5qXhSpmbuOXJGV4B96C1-RNI
+  expiration: 3600
+  issuer: libra
+logging:
+  file:
+    name: log
+    path: D:\My projects\LibraryApp
